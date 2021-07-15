@@ -51,7 +51,7 @@ These steps assume your utccp deployment has the default set of ImageStreams def
 2. Clone your repository to your development machine and cd to the repository directory
 3. Add a Perl application from the provided template and specify the source url to be your forked repo  
 
-		$ oc new-app utccp/templates/dancer.json -p SOURCE_REPOSITORY_URL=<your repository location>
+		$ oc new-app openshift/templates/dancer.json -p SOURCE_REPOSITORY_URL=<your repository location>
 
 4. Depending on the state of your system, and whether additional items need to be downloaded, it may take around a minute for your build to be started automatically.  If you do not want to wait, run
 
@@ -90,7 +90,7 @@ In this case, the IP for dancer-example is 172.30.225.109 and it is on port 8080
   - Note: The output in steps 5-6 may also display information about your database.
 2. Add a Perl application from the dancer-mysql template and specify the source url to be your forked repo  
 
-		$ oc new-app utccp/templates/dancer-mysql.json -p SOURCE_REPOSITORY_URL=<your repository location>
+		$ oc new-app openshift/templates/dancer-mysql.json -p SOURCE_REPOSITORY_URL=<your repository location>
 
 
 ### Adding Webhooks and Making Code Changes

@@ -25,7 +25,7 @@ If you'd like to install it, follow [these directions](https://github.com/utccp/
 
 The steps in this document assume that you have access to an UTCCP deployment that you can deploy applications on.
 
-Utccp Considerations
+utccp Considerations
 ------------------------
 These are some special considerations you may need to keep in mind when running your application on utccp.
 

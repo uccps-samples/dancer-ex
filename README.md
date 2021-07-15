@@ -125,6 +125,7 @@ To add REST and DB connectivity to this sample app, you can up date the applicat
 It will also be necessary to update your application to talk to your database back-end. The inventory.pm file is configured to use DBI and $ENV in such a way that it will accept environment variables for your connection information that you pass to it. After creating a MySQL database service in your project, you can add the following environment variables to your deploymentConfig to ensure all your dancer-example pods have access to these environment variables. Note: the dancer-mysql.json template creates the DB service and environment variables for you. 
 
 You will then need to rebuild the application.  This is done via either a `oc start-build` command, or through the web console, or a webhook trigger in github initiating a build after the code changes are pushed.
+
 ### Compatibility
 
 This repository is compatible with Perl 5.20 and higher, excluding any alpha or beta versions.

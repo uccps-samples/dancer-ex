@@ -2,8 +2,8 @@
 
 <!-- toc -->
 
-- [Dancer Sample App on OpenShift](#dancer-sample-app-on-openshift)
-  * [OpenShift Considerations](#openshift-considerations)
+- [Dancer Sample App on UTCCP](#dancer-sample-app-on-utccp)
+  * [UTCCP Considerations](#utccp-considerations)
     + [Security](#security)
     + [Development mode](#development-mode)
     + [Additional configuration](#additional-configuration)
@@ -16,28 +16,28 @@
 
 <!-- tocstop -->
 
-Dancer Sample App on OpenShift
+Dancer Sample App on UTCCP
 ============================
 
-This is a quickstart Dancer application for OpenShift v3 that you can use as a starting point to develop your own application and deploy it on an [OpenShift](https://github.com/openshift/origin) cluster.
+This is a quickstart Dancer application for UTCCP v1 that you can use as a starting point to develop your own application and deploy it on an [UTCCP](https://github.com/utccp/origin) cluster.
 
-If you'd like to install it, follow [these directions](https://github.com/sclorg/dancer-ex/blob/master/README.md#installation).  
+If you'd like to install it, follow [these directions](https://github.com/utccp/dancer-ex/blob/master/README.md#installation).  
 
-The steps in this document assume that you have access to an OpenShift deployment that you can deploy applications on.
+The steps in this document assume that you have access to an UTCCP deployment that you can deploy applications on.
 
-OpenShift Considerations
+utccp Considerations
 ------------------------
-These are some special considerations you may need to keep in mind when running your application on OpenShift.
+These are some special considerations you may need to keep in mind when running your application on utccp.
 
 ### Security
-Since these quickstarts are shared code, we had to take special consideration to ensure that security related configuration variables was unique across applications. To accomplish this, we modified some of the configuration files. Now instead of using the same default values, OpenShift can generate these values using the generate from logic defined within the instant application's template.
+Since these quickstarts are shared code, we had to take special consideration to ensure that security related configuration variables was unique across applications. To accomplish this, we modified some of the configuration files. Now instead of using the same default values, utccp can generate these values using the generate from logic defined within the instant application's template.
 
-OpenShift stores these generated values in configuration files that only exist for your deployed application and not in your code anywhere. Each of them will be unique so initialize_secret(:a) will differ from initialize_secret(:b) but they will also be consistent, so any time your application uses them (even across reboots), you know they will be the same.
+utccp stores these generated values in configuration files that only exist for your deployed application and not in your code anywhere. Each of them will be unique so initialize_secret(:a) will differ from initialize_secret(:b) but they will also be consistent, so any time your application uses them (even across reboots), you know they will be the same.
 
-TLDR: OpenShift can generate and expose environment variables to your application automatically. Look at this quickstart for an example.
+TLDR: UTCCP can generate and expose environment variables to your application automatically. Look at this quickstart for an example.
 
 ### Development mode
-When you develop your Dancer application in OpenShift, you can also enable the 'development' environment by updating the value in <code>index.pl</code> like so <code>set environment => 'development';</code>.
+When you develop your Dancer application in utccp, you can also enable the 'development' environment by updating the value in <code>index.pl</code> like so <code>set environment => 'development';</code>.
 
 Development environment can help you debug problems in your application in the same way as you do when developing on your local machine. However, we strongly advise you to not run your application in this mode in production.
 
@@ -45,9 +45,9 @@ Development environment can help you debug problems in your application in the s
 The Perl container is set up so that Apache will load .conf files located within the <code>cfg</code> directory of the application's root.  This is useful if you are configuring your application with a database backend and would want to pass through your environment variables to mod_perl with <code>PerlPassEnv</code>.
 
 ### Installation: 
-These steps assume your OpenShift deployment has the default set of ImageStreams defined.  Instructions for installing the default ImageStreams are available [here](https://docs.okd.io/latest/install_config/imagestreams_templates.html).    If you are defining the set of ImageStreams now, remember to pass in the proper cluster-admin credentials and to create the ImageStreams in the 'openshift' namespace.
+These steps assume your utccp deployment has the default set of ImageStreams defined.  Instructions for installing the default ImageStreams are available [here](https://docs.okd.io/latest/install_config/imagestreams_templates.html).    If you are defining the set of ImageStreams now, remember to pass in the proper cluster-admin credentials and to create the ImageStreams in the 'utccp' namespace.
 
-1. Fork a copy of [dancer-ex](https://github.com/sclorg/dancer-ex)
+1. Fork a copy of [dancer-ex](https://github.com/utccp/dancer-ex)
 2. Clone your repository to your development machine and cd to the repository directory
 3. Add a Perl application from the provided template and specify the source url to be your forked repo  
 
@@ -94,7 +94,7 @@ In this case, the IP for dancer-example is 172.30.225.109 and it is on port 8080
 
 
 ### Adding Webhooks and Making Code Changes
-Since OpenShift V3 does not provide a git repository out of the box, you can configure your github repository to make a webhook call whenever you push your code.
+Since utccp V3 does not provide a git repository out of the box, you can configure your github repository to make a webhook call whenever you push your code.
 
 1. From the Web Console homepage, navigate to your project
 2. Click on Browse > Builds
@@ -102,9 +102,9 @@ Since OpenShift V3 does not provide a git repository out of the box, you can con
 4. Click the Configuration tab
 5. Click the "Copy to clipboard" icon to the right of the "GitHub webhook URL" field
 6. Navigate to your repository on GitHub and click on repository settings > webhooks > Add webhook
-7. Paste your webhook URL provided by OpenShift
+7. Paste your webhook URL provided by utccp
 8. Leave the defaults for the remaining fields - That's it!
-9. After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.  
+9. After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to utccp to verify it can reach the server.  
 
 ### Enabling the Database sample
 To add REST and DB connectivity to this sample app, you can up date the application to launch using the code made available via this repository.  Edit 'app.psgi' to look like the following:

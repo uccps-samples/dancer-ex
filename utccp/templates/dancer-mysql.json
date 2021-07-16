@@ -5,17 +5,16 @@
     "name": "dancer-mysql-example",
     "annotations": {
       "openshift.io/display-name": "Dancer + MySQL (Ephemeral)",
-      "description": "An example Dancer application with a MySQL database. For more information about using this template, including OpenShift considerations, see https://github.com/sclorg/dancer-ex/blob/master/README.md.\n\nWARNING: Any data stored will be lost upon pod destruction. Only use this template for testing.",
+      "description": "An example Dancer application with a MySQL database. For more information about using this template, including utccp considerations, see https://github.com/utccp/dancer-ex/blob/master/README.md.\n\nWARNING: Any data stored will be lost upon pod destruction. Only use this template for testing.",
       "tags": "quickstart,perl,dancer",
       "iconClass": "icon-perl",
       "openshift.io/long-description": "This template defines resources needed to develop a Dancer based application, including a build configuration, application deployment configuration, and database deployment configuration.  The database is stored in non-persistent storage, so this configuration should be used for experimental purposes only.",
       "openshift.io/provider-display-name": "Red Hat, Inc.",
-      "openshift.io/documentation-url": "https://github.com/sclorg/dancer-ex",
-      "openshift.io/support-url": "https://access.redhat.com",
+      "openshift.io/documentation-url": "https://github.com/utccp/dancer-ex",
       "template.openshift.io/bindable": "false"
     }
   },
-  "message": "The following service(s) have been created in your project: ${NAME}, ${DATABASE_SERVICE_NAME}.\n\nFor more information about using this template, including OpenShift considerations, see https://github.com/sclorg/dancer-ex/blob/master/README.md.",
+  "message": "The following service(s) have been created in your project: ${NAME}, ${DATABASE_SERVICE_NAME}.\n\nFor more information about using this template, including utccp considerations, see https://github.com/utccp/dancer-ex/blob/master/README.md.",
   "labels": {
       "template": "dancer-mysql-example",
       "app": "dancer-mysql-example"
@@ -414,16 +413,16 @@
     {
       "name": "NAMESPACE",
       "displayName": "Namespace",
-      "description": "The OpenShift Namespace where the ImageStream resides.",
+      "description": "The UTCCP Namespace where the ImageStream resides.",
       "required": true,
-      "value": "openshift"
+      "value": "utccp"
     },
     {
       "name": "PERL_VERSION",
       "displayName": "Version of Perl Image",
-      "description": "Version of Perl image to be used (5.26-el7, 5.26-ubi8, or latest).",
+      "description": "Version of Perl image to be used (5.26, 5.26, or latest).",
       "required": true,
-      "value": "5.26-ubi8"
+      "value": "5.26"
     },
     {
       "name": "MEMORY_LIMIT",
@@ -444,7 +443,7 @@
       "displayName": "Git Repository URL",
       "description": "The URL of the repository with your application source code.",
       "required": true,
-      "value": "https://github.com/sclorg/dancer-ex.git"
+      "value": "https://github.com/utccp/dancer-ex.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",

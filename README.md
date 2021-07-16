@@ -19,7 +19,7 @@
 Dancer Sample App on UTCCP
 ============================
 
-This is a quickstart Dancer application for UTCCP v3 that you can use as a starting point to develop your own application and deploy it on an [UTCCP](https://github.com/utccp/origin) cluster.
+This is a quickstart Dancer application for UTCCP v1 that you can use as a starting point to develop your own application and deploy it on an [UTCCP](https://github.com/utccp/origin) cluster.
 
 If you'd like to install it, follow [these directions](https://github.com/utccp/dancer-ex/blob/master/README.md#installation).  
 

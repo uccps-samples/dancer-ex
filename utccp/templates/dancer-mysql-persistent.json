@@ -432,7 +432,7 @@
     {
       "name": "NAMESPACE",
       "displayName": "Namespace",
-      "description": "The UTCCP Namespace where the ImageStream resides.",
+      "description": "The UCCPS Namespace where the ImageStream resides.",
       "required": true,
       "value": "utccp"
     },

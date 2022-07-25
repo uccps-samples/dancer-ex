@@ -2,8 +2,8 @@
 
 <!-- toc -->
 
-- [Dancer Sample App on UTCCP](#dancer-sample-app-on-utccp)
-  * [UTCCP Considerations](#utccp-considerations)
+- [Dancer Sample App on UCCPS](#dancer-sample-app-on-utccp)
+  * [UCCPS Considerations](#utccp-considerations)
     + [Security](#security)
     + [Development mode](#development-mode)
     + [Additional configuration](#additional-configuration)
@@ -16,14 +16,14 @@
 
 <!-- tocstop -->
 
-Dancer Sample App on UTCCP
+Dancer Sample App on UCCPS
 ============================
 
-This is a quickstart Dancer application for UTCCP v1 that you can use as a starting point to develop your own application and deploy it on an [UTCCP](https://github.com/utccp/origin) cluster.
+This is a quickstart Dancer application for UCCPS v1 that you can use as a starting point to develop your own application and deploy it on an [UCCPS](https://github.com/utccp/origin) cluster.
 
 If you'd like to install it, follow [these directions](https://github.com/utccp/dancer-ex/blob/master/README.md#installation).  
 
-The steps in this document assume that you have access to an UTCCP deployment that you can deploy applications on.
+The steps in this document assume that you have access to an UCCPS deployment that you can deploy applications on.
 
 utccp Considerations
 ------------------------
@@ -34,7 +34,7 @@ Since these quickstarts are shared code, we had to take special consideration to
 
 utccp stores these generated values in configuration files that only exist for your deployed application and not in your code anywhere. Each of them will be unique so initialize_secret(:a) will differ from initialize_secret(:b) but they will also be consistent, so any time your application uses them (even across reboots), you know they will be the same.
 
-TLDR: UTCCP can generate and expose environment variables to your application automatically. Look at this quickstart for an example.
+TLDR: UCCPS can generate and expose environment variables to your application automatically. Look at this quickstart for an example.
 
 ### Development mode
 When you develop your Dancer application in utccp, you can also enable the 'development' environment by updating the value in <code>index.pl</code> like so <code>set environment => 'development';</code>.
